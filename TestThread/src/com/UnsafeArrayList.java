@@ -4,14 +4,18 @@ import java.util.ArrayList;
 
 public class UnsafeArrayList {
     static ArrayList al=new ArrayList();
+    static Object obj = new Object();
     static class AddTask implements Runnable{
         @Override
         public void run() {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {}
-            for(int i=0;i<1000000;i++)
+            for(int i=0;i<1000000;i++){
+                synchronized(obj){
                 al.add(new Object());
+                }
+            }
         }
     }
     public static void main(String[] args) throws InterruptedException {
