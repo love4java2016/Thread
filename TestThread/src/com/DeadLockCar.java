@@ -29,11 +29,11 @@ public class DeadLockCar extends Thread{
 		if (myDirect == south) {
 			try {
 				west.lockInterruptibly();
-				try {
-					Thread.sleep(500);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+//				try {
+//					Thread.sleep(500);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
 				south.lockInterruptibly();
 				System.out.println("car to south has passed");
 			} catch (InterruptedException e1) {
@@ -49,11 +49,11 @@ public class DeadLockCar extends Thread{
 		if (myDirect == north) {
 			try {
 				east.lockInterruptibly();
-				try {
-					Thread.sleep(500);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+//				try {
+//					Thread.sleep(500);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
 				north.lockInterruptibly();
 				System.out.println("car to north has passed");
 			} catch (InterruptedException e1) {
@@ -69,11 +69,11 @@ public class DeadLockCar extends Thread{
 		if (myDirect == west) {
 			try {
 				north.lockInterruptibly();
-				try {
-					Thread.sleep(500);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+//				try {
+//					Thread.sleep(500);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
 				west.lockInterruptibly();
 				System.out.println("car to west has passed");
 			} catch (InterruptedException e1) {
