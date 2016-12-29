@@ -3,7 +3,7 @@ package com;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-public class Test {
+public class TestCompletableFuture {
     public static Integer calc(Integer para){
         try {
             Thread.sleep(1000);
